@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   var tabController = M.Tabs.getInstance(document.getElementById("r-tabs"));
 
-  document.querySelector(".chatter").addEventListener("click", function(event) {
+  $("body").on("click", ".chatter[data-select=annastasie_1]", function(event) {
     var selection = event.currentTarget.dataset.select;
     tabController.select(selection);
 
@@ -30,8 +30,11 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 3000);
   });
 });
-var theme = "light";
+function goHome() {
+  M.Tabs.getInstance(document.getElementById("r-tabs")).select("home");
+}
 
+var theme = "light";
 function toggleBg() {
   var docStyle = document.documentElement.style;
   if (theme === "dark") theme = "light";

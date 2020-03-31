@@ -333,6 +333,11 @@ nav {
 
     @media screen and (max-width: $smallSize) {
       width: 100%;
+      padding: 0;
+
+      & > div > .contain {
+        padding: 0 10px;
+      }
     }
 
     #home {
@@ -343,6 +348,14 @@ nav {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        @media screen and (max-width: $smallSize) {
+          align-items: flex-start;
+          padding-top: 20px;
+          overflow: auto;
+
+          background: var(--body-bg);
+        }
 
         .welcome {
           position: relative;
@@ -461,6 +474,121 @@ nav {
             }
           }
         }
+
+        & > .hide-on-med-and-up {
+          width: 100%;
+        }
+
+        #mobile-messages_count_block {
+          padding: 10px 20px;
+          display: flex;
+
+          & > div {
+            margin: 0 10px;
+
+            .m-title {
+              font-family: "Trebuchet", "Times New Roman", Times, serif;
+              font-weight: 500;
+              font-size: large;
+            }
+
+            .messages-count {
+              padding: 5px 10px;
+              background: rgba(65, 20, 189, 0.336);
+              border-radius: 10px;
+            }
+          }
+        }
+
+        #mobile-chatter-search {
+          padding: 10px 15px;
+          display: flex;
+          justify-content: center;
+
+          input {
+            border: 1px solid $materialBlue;
+            border-radius: 25px;
+            padding: 0 15px;
+            width: 80%;
+          }
+        }
+
+        #mobile-chatlist {
+          width: 100%;
+
+          .chatter {
+            display: flex;
+            height: fit-content;
+            flex-direction: column;
+            border-bottom: 0.5px solid rgba(128, 128, 128, 0.5);
+
+            &:hover {
+              background: var(--chatter-hover);
+              cursor: pointer;
+            }
+
+            &.active {
+              background: var(--chatter-active);
+            }
+
+            .c-main {
+              display: flex;
+              flex-direction: row;
+
+              .image-field {
+                position: relative;
+                width: 25%;
+                height: 100% !important;
+                padding: 5px;
+
+                img {
+                  height: 70px !important;
+                  width: 70px;
+                }
+
+                .unread {
+                  position: absolute;
+                  bottom: 0;
+                  right: 0;
+                  width: 25px;
+                  height: 25px;
+                  border-radius: 50%;
+                  text-align: center;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  transform: translate(-5%, -5%);
+                }
+              }
+
+              .username-field {
+                width: 55%;
+                position: relative;
+
+                h5 {
+                  position: absolute;
+                  top: 30%;
+                  transform: translateY(-50%);
+                  margin: 0 !important;
+                  margin-left: 10px;
+                }
+
+                .truncate {
+                  width: 100%;
+                }
+              }
+
+              .online-field {
+                width: 20%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+              }
+            }
+          }
+        }
       }
     }
     .chat-box {
@@ -479,6 +607,11 @@ nav {
         .top {
           height: 15%;
           padding: 5px 15px;
+
+          @media screen and (max-width: $smallSize) {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+          }
 
           .chatter-name {
             font-family: "Tilez";
@@ -513,6 +646,10 @@ nav {
               padding: 10px 10px;
               font-weight: bold;
               color: aliceblue;
+
+              @media screen and (max-width: $smallSize) {
+                max-width: 40%;
+              }
             }
 
             .msg {

@@ -53,7 +53,7 @@ utilisateur ayant le nom de shogun s'est connecté -->
                 <i class=" material-icons blue-text cursor-pointer">menu</i>
             </span>
 
-            <ul class="right hide-on-small-only">
+            <ul class="right">
                 <!-- ce code s'affiche si l'utilisateur n'a pas répondu aux questions de sécurité -->
                 <!-- <li>
             <a
@@ -82,11 +82,11 @@ utilisateur ayant le nom de shogun s'est connecté -->
                         </div>
                     </a>
                 </li>
-                <li>
+                <li class="hide-on-small-only">
                     <a href="#" class="_ btn find-people select-people waves-effect waves-purple"
                         data-i18n-text="Trouver des gens">Trouver des gens</a>
                 </li>
-                <li>
+                <li class="hide-on-small-only">
                     <a href="#" id="navbar-profile-image"><img src="/images/shogun.jpg"
                             class="user-image circle profil-image " /></a>
                 </li>
@@ -108,7 +108,7 @@ utilisateur ayant le nom de shogun s'est connecté -->
         </li>
         <li>
             <a href="#" class="blue-text select-home close-sidenav">
-                <span class="_" data-i18n-text="Accueil">Accueil</span>
+                <span class="_" data-i18n-text="Accueil" onclick="goHome();">Accueil</span>
                 <i class=" material-icons">home</i>
             </a>
         </li>
@@ -163,7 +163,7 @@ utilisateur ayant le nom de shogun s'est connecté -->
         ici, on montre que des icones -->
         <div id="shortcuts" class=" z-depth-1">
             <ul>
-                <li>
+                <li onclick="goHome();">
                     <a href="#">
                         <i class="material-icons">home</i>
                     </a>
@@ -312,7 +312,8 @@ utilisateur ayant le nom de shogun s'est connecté -->
             <!-- PREMIER TAB -->
             <div id="home" class="active">
                 <div class="contain">
-                    <div class="welcome">
+                    <!-- welcome s'affiche que pour le pc -->
+                    <div class="welcome hide-on-small-and-down">
                         <div>
                             <h2 class="_ capitalize" data-i18n-text="content de vous voir">
                                 content de vous voir
@@ -323,6 +324,92 @@ utilisateur ayant le nom de shogun s'est connecté -->
                             <h2 class="user-name">shogun</h2>
                         </div>
                         <div></div>
+                    </div>
+                    <!-- pour le mobile, au lieu de welcome, 
+                    on affiche la liste de discussions -->
+                    <div class="hide-on-med-and-up">
+                        <!-- cette section a quasiment la même structure
+                        que la deuxieme partie de la partie principale -->
+                        <div id="mobile-messages_count_block">
+                            <div>
+                                <h2 class="m-title">Messages</h2>
+                            </div>
+                            <div>
+                                <span class="messages-count">2</span>
+                            </div>
+                        </div>
+                        <div id="mobile-chatter-search">
+                            <input type="text" name="" id="id_mobile_chatter_search" class="_"
+                                data-i18n-placeholder="Rechercher..." placeholder="Rechercher..." />
+                        </div>
+                        <div id="mobile-chatlist">
+                            <!-- ceci ne sont que des exemples -->
+                            <!-- premier utilisateur avec qui l'utilisateur parle -->
+                            <div class="chatter" data-id="1" data-select="annastasie_1" bot="true">
+                                <div class="c-main">
+                                    <div class="image-field">
+                                        <i class=" unread blue white-text font-bold p-1">
+                                            <span class="unread-count">3</span>
+                                        </i>
+                                        <img src="/images/annastasie.jpg" class="circle zoom-box">
+                                    </div>
+                                    <div class="username-field">
+                                        <h5 class="user-username uppercase ml-3 pl-3 truncate"
+                                            style="font-family: 'Britannic Bold'">Annastasie</h5>
+                                        <div class="truncate pl-3 last-send-message"
+                                            style="position:absolute;bottom:10px;">
+                                            bonjour</div>
+                                    </div>
+                                    <div class="online-field">
+                                        <span data-date="person.string_date" class="last-time mb-1 "
+                                            style="font-size: 0.8em;"></span><i
+                                            class=" material-icons tiny blue-text">fiber_manual_record</i></div>
+                                </div>
+                            </div>
+                            <!-- deuxieme utilisateur avec qui l'utilisateur parle -->
+                            <div class="chatter" data-id="1" data-select="morgan_1" bot="true">
+                                <div class="c-main">
+                                    <div class="image-field">
+                                        <i class=" unread blue white-text font-bold p-1">
+                                            <span class="unread-count">8</span>
+                                        </i>
+                                        <img src="/images/54.jpg" class="circle zoom-box">
+                                    </div>
+                                    <div class="username-field">
+                                        <h5 class="user-username uppercase ml-3 pl-3 truncate"
+                                            style="font-family: 'Britannic Bold'">morgan</h5>
+                                        <div class="truncate pl-3 last-send-message"
+                                            style="position:absolute;bottom:10px;">
+                                            je vais bien</div>
+                                    </div>
+                                    <div class="online-field">
+                                        <span data-date="person.string_date" class="last-time mb-1 "
+                                            style="font-size: 0.8em;"></span><i
+                                            class=" material-icons tiny blue-text">fiber_manual_record</i></div>
+                                </div>
+                            </div>
+                            <div class="chatter" data-id="1" data-select="nella_1" bot="true">
+                                <div class="c-main">
+                                    <div class="image-field">
+                                        <i class=" unread blue white-text font-bold p-1 hide">
+                                            <span class="unread-count"></span>
+                                        </i>
+                                        <img src="/images/17.jpg" class="circle zoom-box">
+                                    </div>
+                                    <div class="username-field">
+                                        <h5 class="user-username uppercase ml-3 pl-3 truncate"
+                                            style="font-family: 'Britannic Bold'">nella</h5>
+                                        <div class="truncate pl-3 last-send-message"
+                                            style="position:absolute;bottom:10px;">
+                                            à demain</div>
+                                    </div>
+                                    <div class="online-field">
+                                        <span data-date="person.string_date" class="last-time mb-1 "
+                                            style="font-size: 0.8em;">17:31</span><i
+                                            class=" material-icons tiny grey-text">fiber_manual_record</i></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -358,6 +445,7 @@ utilisateur ayant le nom de shogun s'est connecté -->
                             <h2 class="chatter-name uppercase"> annastasie</h2>
 
                             <div class="tools">
+                                <i class="material-icons hide-on-med-and-up" onclick="goHome();">arrow_back</i>
                                 <i class="material-icons translate-chat-icon" data-id="1">translate</i>
                                 <i class="material-icons send-picture-icon" data-id="2">photo</i>
                                 <i class="material-icons block-chatter">block</i>
