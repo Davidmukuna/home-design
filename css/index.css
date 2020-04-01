@@ -7,7 +7,7 @@
   /* darkslategrey */
   --text-color: black;
   /* white */
-  --right-part-bg: url("/images/chat-bg.jpg") fixed;
+  --right-part-bg: url("images/chat-bg.jpg") fixed;
   /* url('/static/images/fabrizio-conti-kXVogATbFgA-unsplash.jpg') fixed */
   --text-color-reverse: white;
   /* black */
@@ -98,7 +98,7 @@
   font-family: "Noto";
   font-style: normal;
   font-weight: 400;
-  src: url("/fonts/NotoColorEmoji.ttf");
+  src: url("fonts/NotoColorEmoji.ttf");
 }
 
 .lsx-emojipicker-emoji.lsx-emoji-tab {
