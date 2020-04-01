@@ -53,8 +53,8 @@ function toggleBg() {
   docStyle.setProperty(
     "--right-part-bg",
     ld(
-      'url("./images/chat-bg.jpg") fixed',
-      'url("./images/fabrizio-conti-kXVogATbFgA-unsplash.jpg") fixed'
+      'url("../images/chat-bg.jpg") fixed',
+      'url("../images/fabrizio-conti-kXVogATbFgA-unsplash.jpg") fixed'
     )
   );
   docStyle.setProperty(
